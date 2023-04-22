@@ -59,7 +59,7 @@ public class ListExtension {
     }
 
     /**
-     * 查找符合条件的E
+     * 查找符合条件的 {@link E}
      *
      * @param source 源数据列表
      * @param match  符合条件
@@ -90,6 +90,57 @@ public class ListExtension {
             }
         }
         return -1;
+    }
+
+    /**
+     * 返回最后一个符合条件的对象
+     *
+     * @param source 源列表
+     * @param match  匹配条件
+     * @param <E>    对象类型
+     * @return 对象 or null
+     */
+    public static <E> E findLast(@This List<E> source, Predicate<E> match) {
+        var iter = source.listIterator(source.size());
+        while (iter.hasPrevious()) {
+            var e = iter.previous();
+            if (match.test(e)) return e;
+        }
+        return null;
+    }
+
+    /**
+     * 返回最后一个符合条件的对象的下标
+     *
+     * @param source 源列表
+     * @param match  匹配条件
+     * @param <E>    对象类型
+     * @return 下标 没找到则为 -1
+     */
+    public static <E> int findLastIndex(@This List<E> source, Predicate<E> match) {
+        var iter = source.listIterator(source.size());
+        while (iter.hasPrevious()) {
+            if (match.test(iter.previous())) return iter.nextIndex();
+        }
+        return -1;
+    }
+
+    /**
+     * 返回所有满足条件的 {@link E}
+     *
+     * @param source 源对象
+     * @param match  判断条件
+     * @param <E>    对象类型
+     * @return 目标列表
+     */
+    public static <E> List<E> findAll(@This List<E> source, Predicate<E> match) {
+        var ret = new ArrayList<E>();
+        for (E e : source) {
+            if (match.test(e)) {
+                ret.add(e);
+            }
+        }
+        return ret;
     }
 
     /**
@@ -158,6 +209,21 @@ public class ListExtension {
     }
 
     /**
+     * 反转
+     *
+     * @param source 源列表
+     * @param <E>    对象类型
+     * @return 反转后的列表
+     */
+    public static <E> List<E> reverse(@This List<E> source) {
+        var ret = new ArrayList<E>();
+        for (E e : source) {
+            ret.add(0, e);
+        }
+        return ret;
+    }
+
+    /**
      * 去重
      *
      * @param source 源列表
@@ -193,10 +259,10 @@ public class ListExtension {
      * @param source   源列表
      * @param selector 排序依据的属性
      * @param <E>      对象类型
-     * @param <T>      属性类型
+     * @param <R>      属性类型
      * @return 排序后的列表
      */
-    public static <E, T extends Comparable<T>> List<E> orderBy(@This List<E> source, Function<E, T> selector) {
+    public static <E, R extends Comparable<R>> List<E> orderBy(@This List<E> source, Function<E, R> selector) {
         List<E> ret = new ArrayList<>();
         source.forEach(x -> {
             for (int i = 0; i < ret.size(); i++) {
