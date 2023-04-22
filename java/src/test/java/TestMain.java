@@ -51,7 +51,9 @@ public class TestMain {
                 .forEach(System.out::println);
         System.out.println(List.findLastIndex(x -> x.sequence == -1));
 
-        String str = "";
+        String str = String.empty();
+        str += "1";
+        System.out.println(String.empty());
         System.out.println(str.isNullOrEmpty());
         str = null;
         System.out.println(str.isNullOrEmpty());
