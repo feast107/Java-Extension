@@ -2,7 +2,6 @@ package extensions.java.lang.String;
 
 import manifold.ext.rt.api.Extension;
 import manifold.ext.rt.api.This;
-import manifold.rt.api.util.RegExpMatch;
 
 @Extension
 public class StringExtension {
