@@ -28,6 +28,15 @@ public class StringExtension {
     }
 
     /**
+     * 转换为 {@link Short}
+     * @param string 数字
+     * @return {@link Short}
+     */
+    public static short toShort(@This String string){
+        return Short.parseShort(string);
+    }
+
+    /**
      * 转换为 {@link Integer}
      * @param string 数字
      * @return {@link Integer}
@@ -52,5 +61,14 @@ public class StringExtension {
      */
     public static float toFloat(@This String string){
         return Float.parseFloat(string);
+    }
+
+    /**
+     * 转换为 {@link Double}
+     * @param string 数字
+     * @return {@link Double}
+     */
+    public static double toDouble(@This String string){
+        return Double.parseDouble(string);
     }
 }
