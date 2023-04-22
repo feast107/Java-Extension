@@ -3,7 +3,6 @@ package extensions.java.lang.Object;
 import manifold.ext.rt.api.Extension;
 import manifold.ext.rt.api.Self;
 import manifold.ext.rt.api.This;
-import org.jetbrains.annotations.Debug;
 
 import java.util.Objects;
 
@@ -41,14 +40,14 @@ public class ObjectExtension {
     }
 
     /**
-     * 判断对象是否是类型 {@link T}
+     * 判断对象是否是类型 {@link R}
      *
-     * @param o     对象
+     * @param o    对象
      * @param type 类型
-     * @param <T>   类型
+     * @param <R>  类型
      * @return {@link Boolean}
      */
-    public static <T> boolean is(@This Object o, Class<T> type) {
+    public static <R> boolean is(@This Object o, Class<R> type) {
         return o.getClass() == type;
     }
 }
