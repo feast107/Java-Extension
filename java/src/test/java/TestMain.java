@@ -20,7 +20,6 @@ class Foo {
 public class TestMain {
     private static final List<Foo> List = new ArrayList<>();
 
-
     public static void main(String[] __) {
         List.add(new Foo());
         List.add(new Foo());
@@ -58,6 +57,9 @@ public class TestMain {
         System.out.println(str.isNullOrEmpty());
 
         System.out.println(List.findLastIndex(x -> x.sequence == -1));
-        System.out.println("".is(String.class));
+        Object o = null;
+        System.out.println(o.isNull());
+        o = "";
+        System.out.println(o.notNull().ifNull("").is(String.class));
     }
 }
