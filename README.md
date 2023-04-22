@@ -1,15 +1,15 @@
 # Java-Extension
 
 
-## Collaborate with [Manifold](http://manifold.systems/)
+## Collaborate with [Lombok](https://projectlombok.org/)
 
 <div align=center>
-    <img height=100 src="http://manifold.systems/images/logo_white_64px.png"/>
+    <img height=100 src="https://avatars.githubusercontent.com/u/45949248?s=200&v=4"/>
 </div>
 
 # Including
 + `Object`
-+ `List<>`  part from [Linq-Java](https://github.com/feast107/Linq-java)
++ `List<>` 
 + `String`
 
 # Example
