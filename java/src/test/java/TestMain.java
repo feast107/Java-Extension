@@ -55,6 +55,12 @@ public class TestMain {
         System.out.println(str.isNullOrEmpty());
         str = null;
         System.out.println(str.isNullOrEmpty());
+        str = "114";
+        System.out.println(str.toInt());
+        System.out.println(str.toLong());
+        str = "114.514";
+        System.out.println(str.toFloat());
+
 
         System.out.println(List.findLastIndex(x -> x.sequence == -1));
         Object o = null;
