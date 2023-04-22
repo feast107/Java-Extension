@@ -1,11 +1,17 @@
 package extensions.java.lang.String;
 
+import manifold.ext.rt.ExtensionMethod;
 import manifold.ext.rt.api.Extension;
 import manifold.ext.rt.api.This;
 import org.jetbrains.annotations.Nullable;
 
 @Extension
 public class StringExtension {
+    private static final String Empty = "";
+    @Extension
+    public static String empty(){
+        return Empty;
+    }
 
     /**
      * 该 {@link String} 为 {@code null} 或者 为 {@code ""}
