@@ -28,6 +28,15 @@ public class StringExtension {
     }
 
     /**
+     * 转换为 {@link Boolean}
+     * @param string 布尔值
+     * @return {@link Boolean}
+     */
+    public static boolean toBoolean(@This String string){
+        return Boolean.parseBoolean(string);
+    }
+
+    /**
      * 转换为 {@link Short}
      * @param string 数字
      * @return {@link Short}
