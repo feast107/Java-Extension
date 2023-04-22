@@ -55,6 +55,8 @@ public class TestMain {
         System.out.println(str.isNullOrEmpty());
         str = null;
         System.out.println(str.isNullOrEmpty());
+        str = "0";
+        System.out.println(str.toBoolean());
         str = "114";
         System.out.println(str.toShort());
         System.out.println(str.toInt());
