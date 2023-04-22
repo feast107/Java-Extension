@@ -2,6 +2,7 @@ package extensions.java.lang.String;
 
 import manifold.ext.rt.api.Extension;
 import manifold.ext.rt.api.This;
+import org.jetbrains.annotations.Nullable;
 
 @Extension
 public class StringExtension {
