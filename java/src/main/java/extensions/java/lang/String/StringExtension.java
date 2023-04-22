@@ -8,8 +8,9 @@ import org.jetbrains.annotations.Nullable;
 @Extension
 public class StringExtension {
     private static final String Empty = "";
+
     @Extension
-    public static String empty(){
+    public static String empty() {
         return Empty;
     }
 
@@ -35,55 +36,61 @@ public class StringExtension {
 
     /**
      * 转换为 {@link Boolean}
+     *
      * @param string 布尔值
      * @return {@link Boolean}
      */
-    public static boolean toBoolean(@This String string){
+    public static boolean toBoolean(@This String string) {
         return Boolean.parseBoolean(string);
     }
 
     /**
      * 转换为 {@link Short}
+     *
      * @param string 数字
      * @return {@link Short}
      */
-    public static short toShort(@This String string){
+    public static short toShort(@This String string) {
         return Short.parseShort(string);
     }
 
     /**
      * 转换为 {@link Integer}
+     *
      * @param string 数字
      * @return {@link Integer}
      */
-    public static int toInt(@This String string){
+    public static int toInt(@This String string) {
         return Integer.parseInt(string);
     }
 
     /**
      * 转换为 {@link Long}
+     *
      * @param string 数字
      * @return {@link Long}
      */
-    public static long toLong(@This String string){
+    public static long toLong(@This String string) {
         return Long.parseLong(string);
     }
 
     /**
      * 转换为 {@link Float}
+     *
      * @param string 字符串
      * @return {@link Float}
      */
-    public static float toFloat(@This String string){
+    public static float toFloat(@This String string) {
         return Float.parseFloat(string);
     }
 
     /**
      * 转换为 {@link Double}
+     *
      * @param string 数字
      * @return {@link Double}
      */
-    public static double toDouble(@This String string){
+    public static double toDouble(@This String string) {
         return Double.parseDouble(string);
     }
 }
