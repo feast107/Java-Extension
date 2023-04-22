@@ -49,20 +49,20 @@ public class TestMain {
                 .select(x -> x.name)
                 .reverse()
                 .forEach(System.out::println);
-
+        System.out.println(List.findLastIndex(x -> x.sequence == -1));
 
         String str = "";
         System.out.println(str.isNullOrEmpty());
         str = null;
         System.out.println(str.isNullOrEmpty());
         str = "114";
+        System.out.println(str.toShort());
         System.out.println(str.toInt());
         System.out.println(str.toLong());
         str = "114.514";
         System.out.println(str.toFloat());
+        System.out.println(str.toDouble());
 
-
-        System.out.println(List.findLastIndex(x -> x.sequence == -1));
         Object o = null;
         System.out.println(o.isNull());
         o = "";
