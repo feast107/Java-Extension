@@ -5,6 +5,8 @@ import manifold.ext.rt.api.Self;
 import manifold.ext.rt.api.This;
 
 import java.util.Objects;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 @Extension
 public class ObjectExtension {
