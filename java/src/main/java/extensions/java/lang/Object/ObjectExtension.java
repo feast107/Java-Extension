@@ -1,21 +1,18 @@
 package extensions.java.lang.Object;
 
-import manifold.ext.rt.api.Extension;
-import manifold.ext.rt.api.Self;
-import manifold.ext.rt.api.This;
+
+import lombok.experimental.ExtensionMethod;
 
 import java.util.Objects;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
 
-@Extension
 public class ObjectExtension {
+
     /**
      * @param o 对象
      * @return 对象
      * @throws NullPointerException 如果为空
      */
-    public static @Self Object notNull(@This Object o) {
+    public static Object notNull(Object o) {
         return Objects.requireNonNull(o);
     }
 
@@ -27,7 +24,7 @@ public class ObjectExtension {
      * @param <T> 类型
      * @return 对象
      */
-    public static <T> @Self Object ifNull(@This Object o, T or) {
+    public static <T> Object ifNull(Object o, T or) {
         return o != null ? o : or;
     }
 
@@ -37,7 +34,7 @@ public class ObjectExtension {
      * @param o 对象
      * @return 是否为空
      */
-    public static boolean isNull(@This Object o) {
+    public static boolean isNull(Object o) {
         return o == null;
     }
 
@@ -49,7 +46,8 @@ public class ObjectExtension {
      * @param <R>  类型
      * @return {@link Boolean}
      */
-    public static <R> boolean is(@This Object o, Class<R> type) {
+    public static <R> boolean is(Object o, Class<R> type) {
         return o.getClass() == type;
     }
 }
+
