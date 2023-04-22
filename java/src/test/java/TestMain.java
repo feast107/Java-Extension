@@ -1,3 +1,7 @@
+import extensions.java.lang.Object.ObjectExtension;
+import extensions.java.lang.String.StringExtension;
+import extensions.java.util.List.ListExtension;
+import lombok.experimental.ExtensionMethod;
 import org.jetbrains.annotations.TestOnly;
 
 import java.util.ArrayList;
@@ -17,6 +21,13 @@ class Foo {
     }
 }
 
+@ExtensionMethod({
+        Object.class,
+        String.class,
+        List.class,
+        ObjectExtension.class,
+        StringExtension.class,
+        ListExtension.class})
 public class TestMain {
     private static final List<Foo> List = new ArrayList<>();
 
@@ -51,9 +62,7 @@ public class TestMain {
                 .forEach(System.out::println);
         System.out.println(List.findLastIndex(x -> x.sequence == -1));
 
-        String str = String.empty();
-        str += "1";
-        System.out.println(String.empty());
+        String str = "";
         System.out.println(str.isNullOrEmpty());
         str = null;
         System.out.println(str.isNullOrEmpty());
