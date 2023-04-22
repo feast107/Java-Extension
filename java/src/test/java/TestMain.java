@@ -58,5 +58,6 @@ public class TestMain {
         System.out.println(str.isNullOrEmpty());
 
         System.out.println(List.findLastIndex(x -> x.sequence == -1));
+        System.out.println("".is(String.class));
     }
 }
