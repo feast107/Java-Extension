@@ -1,14 +1,13 @@
 package extensions.java.util.List;
 
-import manifold.ext.rt.api.Extension;
-import manifold.ext.rt.api.This;
+import lombok.experimental.ExtensionMethod;
 
 import java.util.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.Predicate;
 
-@Extension
+@ExtensionMethod({List.class, ListExtension.class})
 public class ListExtension {
 
     /**
@@ -18,7 +17,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 数量
      */
-    public static <E> int count(@This List<E> source) {
+    public static <E> int count(List<E> source) {
         return source.size();
     }
 
@@ -30,7 +29,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 值
      */
-    public static <E> E at(@This List<E> source, int index) {
+    public static <E> E at(List<E> source, int index) {
         return source.get(index);
     }
 
@@ -42,7 +41,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 是否
      */
-    public static <E> boolean any(@This List<E> source, Predicate<E> match) {
+    public static <E> boolean any(List<E> source, Predicate<E> match) {
         return source.stream().anyMatch(match);
     }
 
@@ -54,7 +53,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 是否
      */
-    public static <E> boolean all(@This List<E> source, Predicate<E> match) {
+    public static <E> boolean all(List<E> source, Predicate<E> match) {
         return source.stream().allMatch(match);
     }
 
@@ -66,7 +65,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 找到的E，可能为空
      */
-    public static <E> E find(@This List<E> source, Predicate<E> match) {
+    public static <E> E find(List<E> source, Predicate<E> match) {
         for (E i : source) {
             if (match.test(i)) {
                 return i;
@@ -83,7 +82,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 下标，如果没找到则为 {@code -1}
      */
-    public static <E> int findIndex(@This List<E> source, Predicate<E> match) {
+    public static <E> int findIndex(List<E> source, Predicate<E> match) {
         for (int i = 0; i < source.size(); i++) {
             if (match.test(source.get(i))) {
                 return i;
@@ -100,7 +99,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 对象 or null
      */
-    public static <E> E findLast(@This List<E> source, Predicate<E> match) {
+    public static <E> E findLast(List<E> source, Predicate<E> match) {
         var iter = source.listIterator(source.size());
         while (iter.hasPrevious()) {
             var e = iter.previous();
@@ -117,7 +116,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 下标 没找到则为 -1
      */
-    public static <E> int findLastIndex(@This List<E> source, Predicate<E> match) {
+    public static <E> int findLastIndex(List<E> source, Predicate<E> match) {
         var iter = source.listIterator(source.size());
         while (iter.hasPrevious()) {
             if (match.test(iter.previous())) return iter.nextIndex();
@@ -133,7 +132,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 目标列表
      */
-    public static <E> List<E> findAll(@This List<E> source, Predicate<E> match) {
+    public static <E> List<E> findAll(List<E> source, Predicate<E> match) {
         var ret = new ArrayList<E>();
         for (E e : source) {
             if (match.test(e)) {
@@ -150,7 +149,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 首个元素，如果没有则为 {@literal null}
      */
-    public static <E> E firstOrNull(@This List<E> source) {
+    public static <E> E firstOrNull(List<E> source) {
         return source.stream().findAny().orElse(null);
     }
 
@@ -162,7 +161,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 目标列表，不为空
      */
-    public static <E> List<E> where(@This List<E> source, Predicate<E> match) {
+    public static <E> List<E> where(List<E> source, Predicate<E> match) {
         List<E> ret = new ArrayList<>();
         for (E e : source) {
             if (match.test(e)) {
@@ -181,13 +180,13 @@ public class ListExtension {
      * @param <R>      子容器对象类型
      * @return 新的队列
      */
-    public static <E, R> List<R> select(@This List<E> source, Function<E, R> selector) {
+    public static <E, R> List<R> select(List<E> source, Function<E, R> selector) {
         List<R> ret = new ArrayList<>();
         source.forEach(x -> ret.add(selector.apply(x)));
         return ret;
     }
 
-    public static <E, R> List<R> convertAll(@This List<E> source, Function<E, R> converter) {
+    public static <E, R> List<R> convertAll(List<E> source, Function<E, R> converter) {
         return source.select(converter);
     }
 
@@ -201,7 +200,7 @@ public class ListExtension {
      * @param <R>    种子类型
      * @return 最终的种子
      */
-    public static <E, R> R aggregate(@This List<E> source, R seed, BiFunction<R, E, R> action) {
+    public static <E, R> R aggregate(List<E> source, R seed, BiFunction<R, E, R> action) {
         for (E i : source) {
             seed = action.apply(seed, i);
         }
@@ -215,7 +214,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 反转后的列表
      */
-    public static <E> List<E> reverse(@This List<E> source) {
+    public static <E> List<E> reverse(List<E> source) {
         var ret = new ArrayList<E>();
         for (E e : source) {
             ret.add(0, e);
@@ -230,7 +229,7 @@ public class ListExtension {
      * @param <E>    对象类型
      * @return 去重后的列表
      */
-    public static <E> List<E> distinct(@This List<E> source) {
+    public static <E> List<E> distinct(List<E> source) {
         return source.stream().distinct().toList();
     }
 
@@ -243,7 +242,7 @@ public class ListExtension {
      * @param <R>      属性类型
      * @return 去重后的列表
      */
-    public static <E, R> List<E> distinctBy(@This List<E> source, Function<E, R> selector) {
+    public static <E, R> List<E> distinctBy(List<E> source, Function<E, R> selector) {
         List<E> ret = new ArrayList<>();
         source.forEach(x -> {
             if (!ret.any(e -> selector.apply(e).equals(selector.apply(x)))) {
@@ -262,7 +261,7 @@ public class ListExtension {
      * @param <R>      属性类型
      * @return 排序后的列表
      */
-    public static <E, R extends Comparable<R>> List<E> orderBy(@This List<E> source, Function<E, R> selector) {
+    public static <E, R extends Comparable<R>> List<E> orderBy(List<E> source, Function<E, R> selector) {
         List<E> ret = new ArrayList<>();
         source.forEach(x -> {
             for (int i = 0; i < ret.size(); i++) {
@@ -285,7 +284,7 @@ public class ListExtension {
      * @param <R>      属性类型
      * @return 排序后的列表
      */
-    public static <E, R extends Comparable<R>> List<E> orderByDescending(@This List<E> source, Function<E, R> selector) {
+    public static <E, R extends Comparable<R>> List<E> orderByDescending(List<E> source, Function<E, R> selector) {
         List<E> ret = new ArrayList<>();
         source.forEach(x -> {
             for (int i = 0; i < ret.count(); i++) {
@@ -310,7 +309,7 @@ public class ListExtension {
      * @param <V>           值类型
      * @return HashMap
      */
-    public static <E, K, V> Map<K, V> toMap(@This List<E> source, Function<E, K> keySelector, Function<E, V> valueSelector) {
+    public static <E, K, V> Map<K, V> toMap(List<E> source, Function<E, K> keySelector, Function<E, V> valueSelector) {
         Map<K, V> ret = new HashMap<>();
         source.forEach(x -> {
             ret.put(keySelector.apply(x), valueSelector.apply(x));
