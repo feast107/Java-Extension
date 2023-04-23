@@ -77,13 +77,15 @@ public class TestMain {
         o = "";
         print(o.notNull().ifNull("").is(String.class));
 
-        Date d = new Date().add(Date.fromDays(1));
+        Date d = Date.now().add(Date.fromDays(1));
         print(d);
         d = d.addSeconds(14);
         print(d);
         d = d.addMinutes(3);
         print(d);
         d = d.addHours(2);
+        print(d);
+        d = d.addDays(15);
         print(d);
     }
 }
