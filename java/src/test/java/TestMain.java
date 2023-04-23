@@ -1,9 +1,6 @@
 import org.jetbrains.annotations.TestOnly;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 class Foo {
     static int Count = 0;
@@ -87,5 +84,11 @@ public class TestMain {
         print(d);
         d = d.addDays(15);
         print(d);
+        d = Date.now().add(Date.fromDays(2)).minus(Date.now());
+        print(d.totalMillionSeconds());
+        print(d.totalSeconds());
+        print(d.totalMinutes());
+        print(d.totalHours());
+        print(d.totalDays());
     }
 }
