@@ -15,10 +15,10 @@ public class DateExtension {
         return new Date(date.getTime() + 1000L * second);
     }
     public static Date addMinutes(@This Date date, int minute) {
-        return new Date(date.getTime() + 1000L * 1000 * 60 * minute);
+        return new Date(date.getTime() + 1000L * 60 * minute);
     }
     public static Date addHours(@This Date date, int hour) {
-        return new Date(date.getTime() + 1000L * 1000 * 60 * 60 * hour);
+        return new Date(date.getTime() + 1000L * 60 * 60 * hour);
     }
     public static Date addDays(@This Date date, int day) {
         return new Date(date.getTime() + TimeUnit.DAYS.toMillis(day));
