@@ -1,6 +1,7 @@
 import org.jetbrains.annotations.TestOnly;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,6 +20,10 @@ class Foo {
 
 public class TestMain {
     private static final List<Foo> List = new ArrayList<>();
+
+    private static void print(Object o) {
+        System.out.println(o);
+    }
 
     public static void main(String[] __) {
         List.add(new Foo());
@@ -49,27 +54,30 @@ public class TestMain {
                 .select(x -> x.name)
                 .reverse()
                 .forEach(System.out::println);
-        System.out.println(List.findLastIndex(x -> x.sequence == -1));
+        print(List.findLastIndex(x -> x.sequence == -1));
 
         String str = String.empty();
         str += "1";
-        System.out.println(String.empty());
-        System.out.println(str.isNullOrEmpty());
+        print(String.empty());
+        print(str.isNullOrEmpty());
         str = null;
-        System.out.println(str.isNullOrEmpty());
+        print(str.isNullOrEmpty());
         str = "0";
-        System.out.println(str.toBoolean());
+        print(str.toBoolean());
         str = "114";
-        System.out.println(str.toShort());
-        System.out.println(str.toInt());
-        System.out.println(str.toLong());
+        print(str.toShort());
+        print(str.toInt());
+        print(str.toLong());
         str = "114.514";
-        System.out.println(str.toFloat());
-        System.out.println(str.toDouble());
+        print(str.toFloat());
+        print(str.toDouble());
 
         Object o = null;
-        System.out.println(o.isNull());
+        print(o.isNull());
         o = "";
-        System.out.println(o.notNull().ifNull("").is(String.class));
+        print(o.notNull().ifNull("").is(String.class));
+
+        Date d = new Date().add(Date.fromDays(1));
+        print(d);
     }
 }
