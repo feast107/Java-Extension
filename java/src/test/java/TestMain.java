@@ -84,11 +84,15 @@ public class TestMain {
         print(d);
         d = d.addDays(15);
         print(d);
-        d = Date.now().add(Date.fromDays(2)).minus(Date.now());
-        print(d.totalMillionSeconds());
-        print(d.totalSeconds());
-        print(d.totalMinutes());
-        print(d.totalHours());
-        print(d.totalDays());
+        d = Date.now()
+                .add(Date.fromDays(3))
+                .add(Date.fromHours(3))
+                .add(Date.fromMinutes(3))
+                .minus(Date.now());
+        print((long)d.totalMillionSeconds());
+        print((long)d.totalSeconds());
+        print((long)d.totalMinutes());
+        print((long)d.totalHours());
+        print((long)d.totalDays());
     }
 }
