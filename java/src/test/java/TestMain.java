@@ -94,5 +94,7 @@ public class TestMain {
         print((long)d.totalMinutes());
         print((long)d.totalHours());
         print((long)d.totalDays());
+
+        print( (long)d.totalDays() != (long)Date.fromDays(3).addHours(24).totalDays() );
     }
 }
