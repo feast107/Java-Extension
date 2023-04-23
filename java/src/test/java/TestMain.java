@@ -79,5 +79,11 @@ public class TestMain {
 
         Date d = new Date().add(Date.fromDays(1));
         print(d);
+        d = d.addSeconds(14);
+        print(d);
+        d = d.addMinutes(3);
+        print(d);
+        d = d.addHours(2);
+        print(d);
     }
 }
