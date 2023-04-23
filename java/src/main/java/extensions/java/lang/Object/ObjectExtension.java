@@ -40,14 +40,14 @@ public class ObjectExtension {
     }
 
     /**
-     * 判断对象是否是类型 {@link R}
+     * 判断对象是否是类型 {@link T}
      *
      * @param o    对象
      * @param type 类型
-     * @param <R>  类型
+     * @param <T>  类型
      * @return {@link Boolean}
      */
-    public static <R> boolean is(@This Object o, Class<R> type) {
+    public static <T> boolean is(@This Object o, Class<T> type) {
         return o.getClass() == type;
     }
 }
