@@ -19,10 +19,19 @@ public class DateExtension {
     }
 
     /**
+     * 从毫秒数获取时间
+     * @param millionSeconds 毫秒数
+     * @return 新的时间
+     */
+    public static Date fromMillionSeconds(int millionSeconds){
+        return new Date(millionSeconds);
+    }
+
+    /**
      * 从秒数获取时间
      *
      * @param second 秒数
-     * @return {@link Date}
+     * @return 新的时间
      */
     @Extension
     public static Date fromSeconds(int second) {
