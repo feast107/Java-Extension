@@ -160,6 +160,11 @@ public class DateExtension {
         return date.getTime() / 1000.0 / 60;
     }
 
+    /**
+     * 获取合计的小时数
+     * @param date 当前时间
+     * @return 小时数
+     */
     public static double totalHours(@This Date date) {
         return date.getTime() / 1000.0 / 60 / 60;
     }
