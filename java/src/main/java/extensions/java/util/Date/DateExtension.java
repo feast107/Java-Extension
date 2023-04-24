@@ -92,6 +92,12 @@ public class DateExtension {
         return new Date(date.getTime() + 1000L * 60 * minute);
     }
 
+    /**
+     * 增加小时数
+     * @param date 当前时间
+     * @param hour 小时数
+     * @return 增加后的时间
+     */
     public static Date addHours(@This Date date, int hour) {
         return new Date(date.getTime() + 1000L * 60 * 60 * hour);
     }
