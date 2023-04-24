@@ -102,6 +102,12 @@ public class DateExtension {
         return new Date(date.getTime() + 1000L * 60 * 60 * hour);
     }
 
+    /**
+     * 增加天数
+     * @param date 当前时间
+     * @param day 天数
+     * @return 增加后的时间
+     */
     public static Date addDays(@This Date date, int day) {
         return new Date(date.getTime() + TimeUnit.DAYS.toMillis(day));
     }
