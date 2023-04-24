@@ -142,7 +142,11 @@ public class DateExtension {
         return date.getTime();
     }
 
-    
+    /**
+     * 获取合计的秒数
+     * @param date 当前时间
+     * @return 秒数
+     */
     public static double totalSeconds(@This Date date) {
         return date.getTime() / 1000.0;
     }
