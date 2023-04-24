@@ -112,6 +112,12 @@ public class DateExtension {
         return new Date(date.getTime() + TimeUnit.DAYS.toMillis(day));
     }
 
+    /**
+     * 增加时长
+     * @param date 当前时间
+     * @param another 增加的时间
+     * @return 增加后的时间
+     */
     public static Date add(@This Date date, Date another) {
         return new Date(date.getTime() + another.getTime());
     }
