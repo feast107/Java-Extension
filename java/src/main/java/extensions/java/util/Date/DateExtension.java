@@ -133,10 +133,16 @@ public class DateExtension {
         return new Date(res > 0 ? res : 0L);
     }
 
+    /**
+     * 获取合计的毫秒数
+     * @param date 当前时间
+     * @return 毫秒数
+     */
     public static double totalMillionSeconds(@This Date date) {
         return date.getTime();
     }
 
+    
     public static double totalSeconds(@This Date date) {
         return date.getTime() / 1000.0;
     }
