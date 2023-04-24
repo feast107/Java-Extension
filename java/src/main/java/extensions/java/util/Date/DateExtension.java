@@ -20,10 +20,11 @@ public class DateExtension {
 
     /**
      * 从毫秒数获取时间
+     *
      * @param millionSeconds 毫秒数
      * @return 新的时间
      */
-    public static Date fromMillionSeconds(int millionSeconds){
+    public static Date fromMillionSeconds(int millionSeconds) {
         return new Date(millionSeconds);
     }
 
@@ -73,7 +74,8 @@ public class DateExtension {
 
     /**
      * 增加毫秒
-     * @param date 当前日期
+     *
+     * @param date          当前日期
      * @param millionSecond 毫秒数
      * @return 增加后的日期
      */
@@ -83,7 +85,8 @@ public class DateExtension {
 
     /**
      * 增加秒
-     * @param date 当前日期
+     *
+     * @param date   当前日期
      * @param second 秒数
      * @return 增加后的秒数
      */
@@ -93,7 +96,8 @@ public class DateExtension {
 
     /**
      * 增加分钟数
-     * @param date 当前时间
+     *
+     * @param date   当前时间
      * @param minute 分钟数
      * @return 增加后的时间
      */
@@ -103,6 +107,7 @@ public class DateExtension {
 
     /**
      * 增加小时数
+     *
      * @param date 当前时间
      * @param hour 小时数
      * @return 增加后的时间
@@ -113,8 +118,9 @@ public class DateExtension {
 
     /**
      * 增加天数
+     *
      * @param date 当前时间
-     * @param day 天数
+     * @param day  天数
      * @return 增加后的时间
      */
     public static Date addDays(@This Date date, int day) {
@@ -123,7 +129,8 @@ public class DateExtension {
 
     /**
      * 增加时长
-     * @param date 当前时间
+     *
+     * @param date    当前时间
      * @param another 增加的时间
      * @return 增加后的时间
      */
@@ -133,7 +140,8 @@ public class DateExtension {
 
     /**
      * 减去时间
-     * @param date 当前时间
+     *
+     * @param date    当前时间
      * @param another 减去的时间
      * @return 减去后的时间
      */
@@ -144,6 +152,7 @@ public class DateExtension {
 
     /**
      * 获取合计的毫秒数
+     *
      * @param date 当前时间
      * @return 毫秒数
      */
@@ -153,6 +162,7 @@ public class DateExtension {
 
     /**
      * 获取合计的秒数
+     *
      * @param date 当前时间
      * @return 秒数
      */
@@ -162,6 +172,7 @@ public class DateExtension {
 
     /**
      * 获取合计的分钟数
+     *
      * @param date 当前时间
      * @return 分钟数
      */
@@ -171,6 +182,7 @@ public class DateExtension {
 
     /**
      * 获取合计的小时数
+     *
      * @param date 当前时间
      * @return 小时数
      */
@@ -180,6 +192,7 @@ public class DateExtension {
 
     /**
      * 获取合计的天数
+     *
      * @param date 当前时间
      * @return 天数
      */
