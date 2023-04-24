@@ -122,6 +122,12 @@ public class DateExtension {
         return new Date(date.getTime() + another.getTime());
     }
 
+    /**
+     * 减去时间
+     * @param date 当前时间
+     * @param another 减去的时间
+     * @return 减去后的时间
+     */
     public static Date minus(@This Date date, Date another) {
         long res = date.getTime() - another.getTime();
         return new Date(res > 0 ? res : 0L);
