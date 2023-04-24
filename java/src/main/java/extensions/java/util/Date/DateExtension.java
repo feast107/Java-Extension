@@ -72,10 +72,22 @@ public class DateExtension {
         return new Date(date.getTime() + millionSecond);
     }
 
+    /**
+     * 增加秒
+     * @param date 当前日期
+     * @param second 秒数
+     * @return 增加后的秒数
+     */
     public static Date addSeconds(@This Date date, int second) {
         return new Date(date.getTime() + 1000L * second);
     }
 
+    /**
+     * 增加分钟数
+     * @param date 当前时间
+     * @param minute 分钟数
+     * @return 增加后的时间
+     */
     public static Date addMinutes(@This Date date, int minute) {
         return new Date(date.getTime() + 1000L * 60 * minute);
     }
