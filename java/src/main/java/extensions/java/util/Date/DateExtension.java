@@ -151,6 +151,11 @@ public class DateExtension {
         return date.getTime() / 1000.0;
     }
 
+    /**
+     * 获取合计的分钟数
+     * @param date 当前时间
+     * @return 分钟数
+     */
     public static double totalMinutes(@This Date date) {
         return date.getTime() / 1000.0 / 60;
     }
