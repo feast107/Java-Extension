@@ -62,6 +62,12 @@ public class DateExtension {
         return new Date(TimeUnit.DAYS.toMillis(days));
     }
 
+    /**
+     * 增加毫秒
+     * @param date 当前日期
+     * @param millionSecond 毫秒数
+     * @return 增加后的日期
+     */
     public static Date addMillionSeconds(@This Date date, int millionSecond) {
         return new Date(date.getTime() + millionSecond);
     }
